@@ -1,0 +1,37 @@
+cmake_minimum_required(VERSION 3.10)
+
+# set the project name
+project(Prueba)
+
+set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_CXX_STANDARD_REQUIRED True)
+
+set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/cmake/")
+
+# find_package(OpenGL REQUIRED)
+
+# GLM
+find_package(GLM REQUIRED)
+
+file(GLOB_RECURSE glh "${CMAKE_SOURCE_DIR}/include/GL/*.h")
+file(GLOB_RECURSE libraries "${CMAKE_SOURCE_DIR}/lib/*.lib")
+
+
+# add the executable
+add_executable(Prueba 
+${CMAKE_SOURCE_DIR}/scr/main.cpp 
+${CMAKE_SOURCE_DIR}/scr/auxiliar.cpp 
+${CMAKE_SOURCE_DIR}/scr/auxiliar.h 
+${CMAKE_SOURCE_DIR}/scr/BOX.h 
+${CMAKE_SOURCE_DIR}/scr/PLANE.h 
+${CMAKE_SOURCE_DIR}/scr/Tetraedro.h
+${CMAKE_SOURCE_DIR}/scr/FreeImage.h
+${glh})
+
+target_link_libraries(Prueba ${GLUT_LIBRARY} ${libraries} )
+
+target_include_directories(Prueba PUBLIC
+                          "${CMAKE_SOURCE_DIR}/lib"
+                          "${CMAKE_SOURCE_DIR}/include"
+                          "${CMAKE_SOURCE_DIR}/bin"
+                          )
