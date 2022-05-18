@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.10)
 
 # set the project name
-project(Prueba)
+project(OpenGLDemo)
 
 set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
@@ -18,7 +18,7 @@ file(GLOB_RECURSE libraries "${CMAKE_SOURCE_DIR}/lib/*.lib")
 
 
 # add the executable
-add_executable(Prueba 
+add_executable(OpenGLDemo 
 ${CMAKE_SOURCE_DIR}/scr/main.cpp 
 ${CMAKE_SOURCE_DIR}/scr/auxiliar.cpp 
 ${CMAKE_SOURCE_DIR}/scr/auxiliar.h 
@@ -28,9 +28,9 @@ ${CMAKE_SOURCE_DIR}/scr/Tetraedro.h
 ${CMAKE_SOURCE_DIR}/scr/FreeImage.h
 ${glh})
 
-target_link_libraries(Prueba ${GLUT_LIBRARY} ${libraries} )
+target_link_libraries(OpenGLDemo ${GLUT_LIBRARY} ${libraries} )
 
-target_include_directories(Prueba PUBLIC
+target_include_directories(OpenGLDemo PUBLIC
                           "${CMAKE_SOURCE_DIR}/lib"
                           "${CMAKE_SOURCE_DIR}/include"
                           "${CMAKE_SOURCE_DIR}/bin"

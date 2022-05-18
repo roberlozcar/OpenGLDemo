@@ -14,6 +14,10 @@ It used two set of shaders, the first one draw the geometry, create a buffer wit
 - Also, the user can change the type of light (spotlight, point light or directional light) of the scene.
 - The type of convolutional mask is changed with "c".
 
+## Requeriments
+
+This project needs glm, glew, glut and freeimage. The headers, libs and dlls for win32 are included in this repository.
+
 ## Questions
 
 Write an email to r.lozano93@gmail.com.
